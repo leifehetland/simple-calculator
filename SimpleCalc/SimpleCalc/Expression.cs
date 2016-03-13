@@ -43,6 +43,23 @@ namespace Calculator.Tests
                 return "-";
             }
 
+            if (equation.Contains("*"))
+            {
+                return "*";
+            }
+
+            if (equation.Contains("/"))
+            {
+                return "/";
+            }
+
+            if (equation.Contains("%"))
+            {
+                return "%";
+            }
+
+            return equation;
+
         }
     }
 }

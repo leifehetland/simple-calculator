@@ -73,7 +73,7 @@ namespace Calculator.Tests
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void CanIHandleOnlyMoreThanTwoNumbers()
+        public void CanIHandleMoreThanTwoNumbers()
         {
             //Arrange
             Expression calcExpression = new Expression();
