@@ -16,7 +16,7 @@ namespace Calculator.Tests
             //Act
             var expected = 5;
             object[] userinput = { 2, '+', 3};
-            var actual = Add.AddTwoNumbers(userinput);
+            int actual = Add.AddTwoNumbers(userinput);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -46,7 +46,7 @@ namespace Calculator.Tests
             //Act
             var expected = 10;
             object[] userinput = { 2, '*', 5 };
-            var actual = Multiply.MultiplyTwoNumbers(userinput);
+            int actual = Multiply.MultiplyTwoNumbers(userinput);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -61,7 +61,7 @@ namespace Calculator.Tests
             //Act
             var expected = .25;
             object[] userinput = { 1, '/', 4 };
-            var actual = Division.DivideTwoNumbers(userinput);
+            double actual = Division.DivideTwoNumbers(userinput);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -76,7 +76,7 @@ namespace Calculator.Tests
             //Act
             var expected = 2;
             object[] userinput = { 11, '%', 3 };
-            var actual = Modulo.ModuloTwoNumbers(userinput);
+            int actual = Modulo.ModuloTwoNumbers(userinput);
 
             //Assert
             Assert.AreEqual(expected, actual);

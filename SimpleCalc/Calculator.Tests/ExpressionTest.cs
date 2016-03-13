@@ -1,4 +1,5 @@
 ﻿using System;
+using SimpleCalc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Calculator.Tests
