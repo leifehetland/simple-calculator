@@ -15,7 +15,7 @@ namespace Calculator.Tests
 
             //Act
             var expected = 5;
-            object[] userinput = { 2, '+', 3};
+            object[] userinput = { 2, '+', 3 };
             int actual = Add.AddTwoNumbers(userinput);
 
             //Assert
@@ -81,6 +81,42 @@ namespace Calculator.Tests
             //Assert
             Assert.AreEqual(expected, actual);
         }
-    }
 
+        [TestMethod]
+        public void CanIParseTwoNumbers()
+        {
+            //Arrange
+            Evaluate math = new Evaluate();
+            Expression myExpression = new Expression();
+            string testExpression = "4*2";
+            int[] twoNums = myExpression.GetTwoNumbers(testExpression);
+
+
+            //Act
+            int[] expected = { 4, 2 };
+            int[] actual = twoNums;
+
+            //Assert
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void CanIParseAnOperator()
+        {
+            //Arrange
+            Evaluate math = new Evaluate();
+            Expression myExpression = new Expression();
+            string testExpression = "4*2";
+            string myOperator = myExpression.GetOperator(testExpression);
+
+
+
+            //Act
+            string expected = ("*");
+            string actual = myOperator;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+    }
 }

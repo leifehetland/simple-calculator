@@ -52,5 +52,20 @@ namespace Calculator.Tests
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void CanICreateAKeyValuePair()
+        {
+            //Arrange
+            Stack stack = new Stack();
+
+            //Act
+            double expected = 5.569;
+            stack.lastans = 5.569;
+            var actual = stack.lastans;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

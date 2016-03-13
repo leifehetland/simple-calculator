@@ -8,39 +8,39 @@ namespace SimpleCalc
 {
     public class Evaluate
     {
-        public int AddTwoNumbers(object[] userinput)
+        public int AddTwoNumbers(int[] twoNums)
         {
-            int term1 = (int)userinput[0];
-            int term2 = (int)userinput[2];
+            int term1 = (int)twoNums[0];
+            int term2 = (int)twoNums[1];
             return term1 + term2; 
             
         }
 
-        public int SubtractTwoNumbers(object[] userinput)
+        public int SubtractTwoNumbers(int[] twoNums)
         {
-            int term1 = (int)userinput[0];
-            int term2 = (int)userinput[2];
+            int term1 = (int)twoNums[0];
+            int term2 = (int)twoNums[2];
             return term1 - term2;
         }
 
-        public int MultiplyTwoNumbers(object[] userinput)
+        public int MultiplyTwoNumbers(int[] twoNums)
         {
-            int term1 = (int)userinput[0];
-            int term2 = (int)userinput[2];
+            int term1 = (int)twoNums[0];
+            int term2 = (int)twoNums[2];
             return term1 * term2;
         }
 
-        public double DivideTwoNumbers(object[] userinput)
+        public double DivideTwoNumbers(int[] twoNums)
         {
-            double term1 = (int)userinput[0];
-            double term2 = (int)userinput[2];
+            double term1 = (int)twoNums[0];
+            double term2 = (int)twoNums[2];
             return term1 / term2;
         }
 
-        public int ModuloTwoNumbers(object[] userinput)
+        public int ModuloTwoNumbers(int[] twoNums)
         {
-            int term1 = (int)userinput[0];
-            int term2 = (int)userinput[2];
+            int term1 = (int)twoNums[0];
+            int term2 = (int)twoNums[2];
             return term1 % term2;
         }
     }
