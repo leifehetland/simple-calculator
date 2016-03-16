@@ -8,7 +8,13 @@ namespace SimpleCalc
 {
     public class Stack
     {
-        public string lastq { get; set; }
-        public double lastans { get; set; }
+        public object [] LastExp { get; set; }
+        public double LastAns { get; set; }
+        public Dictionary<char, int> constants = new Dictionary<char, int>();
+
+        public void SetLastExp(object[] noodletest)
+        {
+            LastExp = noodletest;
+        }
     }
 }

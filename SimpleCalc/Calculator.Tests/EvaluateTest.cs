@@ -16,7 +16,7 @@ namespace Calculator.Tests
             //Act
             var expected = 5;
             object[] userinput = { 2, '+', 3 };
-            int actual = Add.AddTwoNumbers(userinput);
+            double actual = Add.EvalMath(userinput);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -31,7 +31,7 @@ namespace Calculator.Tests
             //Act
             var expected = 1;
             object[] userinput = { 3, '-', 2 };
-            var actual = Subtract.SubtractTwoNumbers(userinput);
+            double actual = Subtract.EvalMath(userinput);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -46,7 +46,7 @@ namespace Calculator.Tests
             //Act
             var expected = 10;
             object[] userinput = { 2, '*', 5 };
-            int actual = Multiply.MultiplyTwoNumbers(userinput);
+            double actual = Multiply.EvalMath(userinput);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -61,7 +61,7 @@ namespace Calculator.Tests
             //Act
             var expected = .25;
             object[] userinput = { 1, '/', 4 };
-            double actual = Division.DivideTwoNumbers(userinput);
+            double actual = Division.EvalMath(userinput);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -76,7 +76,7 @@ namespace Calculator.Tests
             //Act
             var expected = 2;
             object[] userinput = { 11, '%', 3 };
-            int actual = Modulo.ModuloTwoNumbers(userinput);
+            double actual = Modulo.EvalMath(userinput);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -117,6 +117,18 @@ namespace Calculator.Tests
 
             //Assert
             Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidCastException))]
+        public void CanIHandleMoreThanTwoOperators()
+        {
+            //Arrange
+            Evaluate calcEval = new Evaluate();
+
+            //Act
+            object [] badInput = { 1, '+', '/', 4 };
+            calcEval.EvalMath(badInput);
         }
     }
 }

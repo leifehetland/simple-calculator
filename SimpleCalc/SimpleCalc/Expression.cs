@@ -24,11 +24,7 @@ namespace Calculator.Tests
             {
                 throw new ArgumentException();
             }
-
             return myNumbers.ToArray();
-            
-
-
         }
 
         public string GetOperator(string equation)

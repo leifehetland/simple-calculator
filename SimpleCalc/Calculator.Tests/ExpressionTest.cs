@@ -94,7 +94,5 @@ namespace Calculator.Tests
             string actual = calcExpression.GetOperator("2 + 3");
 
         }
-
-
     }
 }

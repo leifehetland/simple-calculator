@@ -15,12 +15,12 @@ namespace Calculator.Tests
             Stack stack = new Stack();
 
             //Act
-            string expected = "2+3";
-            stack.lastq = "2+3";
-            var actual = stack.lastq;
+            stack.SetLastExp(new object [] { 2, '+', 3});
+            object [] actual = {2, '+', 3 };
+            object[] expected = stack.LastExp;
 
             //Assert
-            Assert.AreEqual(expected, actual);
+            CollectionAssert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -31,8 +31,8 @@ namespace Calculator.Tests
 
             //Act
             double expected = 5.569;
-            stack.lastans = 5.569;
-            var actual = stack.lastans;
+            stack.LastAns = 5.569;
+            var actual = stack.LastAns;
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -46,8 +46,8 @@ namespace Calculator.Tests
 
             //Act
             int expected = 5;
-            stack.lastans = 5;
-            var actual = stack.lastans;
+            stack.LastAns = 5;
+            var actual = stack.LastAns;
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -61,8 +61,8 @@ namespace Calculator.Tests
 
             //Act
             double expected = 5.569;
-            stack.lastans = 5.569;
-            var actual = stack.lastans;
+            stack.LastAns = 5.569;
+            var actual = stack.LastAns;
 
             //Assert
             Assert.AreEqual(expected, actual);
