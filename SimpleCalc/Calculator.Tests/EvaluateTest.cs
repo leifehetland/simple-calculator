@@ -130,5 +130,61 @@ namespace Calculator.Tests
             object [] badInput = { 1, '+', '/', 4 };
             calcEval.EvalMath(badInput);
         }
+
+        [TestMethod]
+        public void CanIHandleSetLastExpression()
+        {
+            //Arrange
+            Evaluate calcEval = new Evaluate();
+            object[] expression = { 4, '-', 2 };
+
+            //Act
+            calcEval.EvalMath(expression);
+            var actual = calcEval.Stack.LastExp;
+
+            //Assert
+            CollectionAssert.AreEqual(actual, expression);
+              
+        }
+
+        [TestMethod]
+        public void CanIHandleSetLastAnswer()
+        {
+            //Arrange
+            Evaluate calcEval = new Evaluate();
+            object[] expression = { 4, '-', 2 };
+            double expected = 2;
+
+            //Act
+            calcEval.EvalMath(expression);
+            var actual = calcEval.Stack.LastAns;
+
+            //Assert
+            Assert.AreEqual(actual, expected);
+        }
+
+        [TestMethod]
+        public void CanIHandleSetLastAnswerOnMultipleCalculations()
+        {
+            //Arrange
+            Evaluate calcEval = new Evaluate();
+            object[] expression1 = { 4, '-', 2 };
+            object[] expression2 = { 2, '+', 3 };
+            object[] expression3 = { 3, '*', 5 };
+
+            object[] lastExpression  = expression3;
+            double lastAnswer = 15;
+
+            //Act
+            calcEval.EvalMath(expression1);
+            calcEval.EvalMath(expression2);
+            calcEval.EvalMath(expression3);
+            var actualAnswer = calcEval.Stack.LastAns;
+            var actualExpression = calcEval.Stack.LastExp;
+
+            //Assert
+            CollectionAssert.AreEqual(actualExpression, lastExpression);
+            Assert.AreEqual(actualAnswer, lastAnswer);
+        }
     }
 }

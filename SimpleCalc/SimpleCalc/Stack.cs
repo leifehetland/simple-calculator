@@ -10,7 +10,13 @@ namespace SimpleCalc
     {
         public object [] LastExp { get; set; }
         public double LastAns { get; set; }
-        public Dictionary<char, int> constants = new Dictionary<char, int>();
+        public Dictionary<char, int> Constants { get; set; }
+
+        public Stack()
+        {
+            Dictionary<char, int> Constants = new Dictionary<char, int>();
+            this.Constants.Add('a', 5);
+        }
 
         public void SetLastExp(object[] noodletest)
         {

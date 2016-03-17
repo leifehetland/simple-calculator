@@ -16,8 +16,8 @@ namespace Calculator.Tests
 
             //Act
             stack.SetLastExp(new object [] { 2, '+', 3});
-            object [] actual = {2, '+', 3 };
-            object[] expected = stack.LastExp;
+            object [] actual = stack.LastExp;
+            object[] expected = { 2, '+', 3 };
 
             //Assert
             CollectionAssert.AreEqual(expected, actual);
@@ -53,19 +53,19 @@ namespace Calculator.Tests
             Assert.AreEqual(expected, actual);
         }
 
-        [TestMethod]
-        public void CanICreateAKeyValuePair()
-        {
-            //Arrange
-            Stack stack = new Stack();
+        //[TestMethod]
+        //public void CanICreateAKeyValuePair()
+        //{
+        //    //Arrange
+        //    Stack stack = new Stack();
 
-            //Act
-            double expected = 5.569;
-            stack.LastAns = 5.569;
-            var actual = stack.LastAns;
+        //    //Act
+        //    double expected = 5.569;
+        //    stack.LastAns = 5.569;
+        //    var actual = stack.LastAns;
 
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
+        //    //Assert
+        //    Assert.AreEqual(expected, actual);
+        //}
     }
 }

@@ -8,8 +8,11 @@ namespace SimpleCalc
 {
     public class Evaluate
     {
+        public Stack Stack = new Stack();
+
         public double EvalMath(object[] mathParty)
         {
+            this.Stack.SetLastExp(mathParty);
             char operators = (char)mathParty[1];
             if (operators == '=')
             {
@@ -17,23 +20,34 @@ namespace SimpleCalc
             }
             else if (operators == '+')
             {
-                return AddTwoNumbers(mathParty);
+                var result = AddTwoNumbers(mathParty);
+                Stack.LastAns = result;
+                return result;
             }
             else if (operators == '-')
             {
-                return SubtractTwoNumbers(mathParty);
+                var result = SubtractTwoNumbers(mathParty);
+                Stack.LastAns = result;
+                return result;
+
             }
             else if (operators == '*')
             {
-                return MultiplyTwoNumbers(mathParty);
+                var result = MultiplyTwoNumbers(mathParty);
+                Stack.LastAns = result;
+                return result;
             }
             else if (operators == '/')
             {
-                return DivideTwoNumbers(mathParty);
+                var result = DivideTwoNumbers(mathParty);
+                Stack.LastAns = result;
+                return result;
             }
             else if (operators == '%')
             {
-                return ModuloTwoNumbers(mathParty);
+                var result = ModuloTwoNumbers(mathParty);
+                Stack.LastAns = result;
+                return result;
             }
             else
             {
