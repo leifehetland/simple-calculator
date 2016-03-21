@@ -4,10 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Calculator.Tests
+namespace SimpleCalc
 {
     public class Expression
     {
+        public object[] GetParts(string expression)
+        {
+            var operands = this.GetTwoNumbers(expression);
+            var ops = this.GetOperator(expression);
+            object[] parts = {operands[0], ops, operands[1]};
+            return parts;
+        }
+
         public int[] GetTwoNumbers(string expression)
         {
             char[] operators = { '+', '-', '/', '*', '%' };

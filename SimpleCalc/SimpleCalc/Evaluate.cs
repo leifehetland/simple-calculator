@@ -13,37 +13,38 @@ namespace SimpleCalc
         public double EvalMath(object[] mathParty)
         {
             this.Stack.SetLastExp(mathParty);
-            char operators = (char)mathParty[1];
-            if (operators == '=')
+
+            string operators = (string)mathParty[1];
+            if (operators == "=")
             {
                 return (int)mathParty[2];
             }
-            else if (operators == '+')
+            else if (operators == "+")
             {
                 var result = AddTwoNumbers(mathParty);
                 Stack.LastAns = result;
                 return result;
             }
-            else if (operators == '-')
+            else if (operators == "-")
             {
                 var result = SubtractTwoNumbers(mathParty);
                 Stack.LastAns = result;
                 return result;
 
             }
-            else if (operators == '*')
+            else if (operators == "*")
             {
                 var result = MultiplyTwoNumbers(mathParty);
                 Stack.LastAns = result;
                 return result;
             }
-            else if (operators == '/')
+            else if (operators == "/")
             {
                 var result = DivideTwoNumbers(mathParty);
                 Stack.LastAns = result;
                 return result;
             }
-            else if (operators == '%')
+            else if (operators == "%")
             {
                 var result = ModuloTwoNumbers(mathParty);
                 Stack.LastAns = result;

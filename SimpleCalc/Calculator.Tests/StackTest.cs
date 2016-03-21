@@ -53,19 +53,20 @@ namespace Calculator.Tests
             Assert.AreEqual(expected, actual);
         }
 
-        //[TestMethod]
-        //public void CanICreateAKeyValuePair()
-        //{
-        //    //Arrange
-        //    Stack stack = new Stack();
+        [TestMethod]
+        public void CanIReturnAConstantInLowerCase()
+        {
+            //Arrange
+            Stack stack = new Stack();
+            
 
-        //    //Act
-        //    double expected = 5.569;
-        //    stack.LastAns = 5.569;
-        //    var actual = stack.LastAns;
+            //Act
+            char expected = 'x';
+            var actual = stack.SetConstant('X'); 
+            
 
-        //    //Assert
-        //    Assert.AreEqual(expected, actual);
-        //}
+           //Assert
+           Assert.AreEqual(expected, actual);
+        }
     }
 }

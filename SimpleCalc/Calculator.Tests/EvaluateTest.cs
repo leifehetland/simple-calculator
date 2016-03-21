@@ -11,12 +11,12 @@ namespace Calculator.Tests
         public void CanIAddTwoNumbers()
         {
             //Arrange
-            Evaluate Add = new Evaluate();
+            Evaluate evaluate = new Evaluate();
 
             //Act
-            var expected = 5;
-            object[] userinput = { 2, '+', 3 };
-            double actual = Add.EvalMath(userinput);
+            int expected = 5;
+            object[] userInput = { 2, "+", 3 } ;
+            double actual = evaluate.EvalMath(userInput);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -30,8 +30,8 @@ namespace Calculator.Tests
 
             //Act
             var expected = 1;
-            object[] userinput = { 3, '-', 2 };
-            double actual = Subtract.EvalMath(userinput);
+            object[] userInput = { 3, "-", 2 };
+            double actual = Subtract.EvalMath(userInput);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -45,8 +45,8 @@ namespace Calculator.Tests
 
             //Act
             var expected = 10;
-            object[] userinput = { 2, '*', 5 };
-            double actual = Multiply.EvalMath(userinput);
+            object[] userInput = { 2, "*", 5 };
+            double actual = Multiply.EvalMath(userInput);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -60,23 +60,23 @@ namespace Calculator.Tests
 
             //Act
             var expected = .25;
-            object[] userinput = { 1, '/', 4 };
-            double actual = Division.EvalMath(userinput);
+            object[] userInput = { 1, "/", 4 };
+            double actual = Division.EvalMath(userInput);
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void CanIAddModuloNumbers()
+        public void CanIModuloNumbers()
         {
             //Arrange
             Evaluate Modulo = new Evaluate();
 
             //Act
             var expected = 2;
-            object[] userinput = { 11, '%', 3 };
-            double actual = Modulo.EvalMath(userinput);
+            object[] userInput = { 11, "%", 3 };
+            double actual = Modulo.EvalMath(userInput);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -136,7 +136,7 @@ namespace Calculator.Tests
         {
             //Arrange
             Evaluate calcEval = new Evaluate();
-            object[] expression = { 4, '-', 2 };
+            object[] expression = { 4, "-", 2 };
 
             //Act
             calcEval.EvalMath(expression);
@@ -152,7 +152,7 @@ namespace Calculator.Tests
         {
             //Arrange
             Evaluate calcEval = new Evaluate();
-            object[] expression = { 4, '-', 2 };
+            object[] expression = { 4, "-", 2 };
             double expected = 2;
 
             //Act
@@ -168,9 +168,9 @@ namespace Calculator.Tests
         {
             //Arrange
             Evaluate calcEval = new Evaluate();
-            object[] expression1 = { 4, '-', 2 };
-            object[] expression2 = { 2, '+', 3 };
-            object[] expression3 = { 3, '*', 5 };
+            object[] expression1 = { 4, "-", 2 };
+            object[] expression2 = { 2, "+", 3 };
+            object[] expression3 = { 3, "*", 5 };
 
             object[] lastExpression  = expression3;
             double lastAnswer = 15;
