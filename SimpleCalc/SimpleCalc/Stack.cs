@@ -28,7 +28,7 @@ namespace SimpleCalc
 
         public Stack()
         {
-            Dictionary<char, int> Constants = new Dictionary<char, int>();
+             this.Constants = new Dictionary<char, int>();
             
         }
 
@@ -39,36 +39,24 @@ namespace SimpleCalc
 
         public int GetConstant(char myConstant)
         {
-            int constant = 0;
+            int Constant = 0;
             if (Constants.ContainsKey(myConstant))
             {
-                if (!Constants.TryGetValue(myConstant, out constant))
+                if (!Constants.TryGetValue(myConstant, out Constant))
                 {
                     throw new ArgumentException();
                 }
             }
-            return constant;
+            return Constant;
         }
 
-        public object[] SetConstant(string userInput, string[] letter)
+        public void SetConstant(char key, int value)
         {
-            userInput = userInput.ToLower();
-            int constantArray = userInput.IndexOfAny(new char[] { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' });
-            if (constantArray == -1)
+            if (Constants.ContainsKey(key))
             {
                 throw new ArgumentException();
             }
-            char constantLower = char.ToLower(userInput[constantArray]);
-
-            int myLetter;
-            bool success = int.TryParse(letter[1], out myLetter);
-            if (!success)
-            {
-                throw new ArgumentException();
-            }
-
-            Constants.Add(constantLower, myLetter);
-            return new object[] { constantLower, myLetter };
+            Constants.Add(key, value);
         }
     }
 }

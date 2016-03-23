@@ -8,12 +8,39 @@ namespace SimpleCalc
 {
     public class Expression
     {
+        public Stack Constants { get; set; }
+
+        public Expression()
+        {
+            Constants = new Stack();
+        }
         public object[] GetParts(string expression)
         {
-            var operands = this.GetTwoNumbers(expression);
-            var ops = this.GetOperator(expression);
-            object[] parts = {operands[0], ops, operands[1]};
-            return parts;
+            
+            try
+            {
+                var operands = this.GetTwoNumbers(expression);
+                var ops = this.GetOperator(expression);
+                object[] parts = { operands[0], ops, operands[1] };
+                return parts;
+            }
+            catch (Exception) {  }
+            try
+            {
+                var operands = expression.Split('=');
+                int value;
+                int.TryParse(operands[1], out value);
+                char key = operands[0][0];
+                Constants.SetConstant(key, value);
+                return new object[] { };
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
+            
         }
 
         public int[] GetTwoNumbers(string expression)
@@ -24,7 +51,25 @@ namespace SimpleCalc
 
             foreach (var stringInt in onlyInts)
             {
-                int number = Int32.Parse(stringInt);
+                int number;
+                try
+                {
+                    number = Int32.Parse(stringInt);
+                }
+                catch (Exception)
+                {
+                    try
+                    {
+                        number = Constants.GetConstant(stringInt[0]);
+                    }
+                    catch (Exception)
+                    {
+                        throw new ArgumentException();
+                    }
+
+                    
+                }
+
                 myNumbers.Add(number);
             }
 

@@ -54,19 +54,18 @@ namespace Calculator.Tests
         }
 
         [TestMethod]
-        public void CanIReturnAConstantInLowerCase()
+        public void CanISetAndGetConstants()
         {
-            //Arrange
+            // Arrange
+            Expression expression = new Expression();
             Stack stack = new Stack();
+            // Act
+            expression.GetParts("x = 5");
+            int expected = 5;
+            int actual = expression.Constants.GetConstant('x'); 
             
-
-            //Act
-            char expected = 'x';
-            var actual = stack.SetConstant('X'); 
-            
-
-           //Assert
-           Assert.AreEqual(expected, actual);
+            // Assert
+            Assert.AreEqual(expected, actual);
         }
     }
 }
