@@ -37,7 +37,7 @@ namespace SimpleCalc
             catch (Exception)
             {
 
-                throw;
+                throw new ArgumentException("Error cannot reassign variables");
             }
             
             

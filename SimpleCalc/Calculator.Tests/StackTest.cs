@@ -67,5 +67,20 @@ namespace Calculator.Tests
             // Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void CanIAddWithAConstant()
+        {
+            // Arrange
+            Expression expression = new Expression();
+            Stack stack = new Stack();
+            // Act
+            expression.GetParts("x = 5");
+            int expected = 5;
+            int actual = Evaluate.('x');
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

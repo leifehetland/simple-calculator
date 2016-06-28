@@ -49,18 +49,6 @@ namespace Calculator.Tests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(FormatException))]
-        public void ExpressionCanIHandleLetters()
-        {
-            //Arrange
-            Expression calcExpression = new Expression();
-
-            //Act
-            string badInput = "a + 5";
-            calcExpression.GetTwoNumbers(badInput);
-        }
-
-        [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void CanIHandleOnlyOneNumber()
         {

@@ -16,11 +16,11 @@ namespace SimpleCalc
             Console.WriteLine("Welcome to Simple Calculator, please give me a simple math problem.");
             Expression expression = new Expression();
             Evaluate evaluate = new Evaluate();
-             
-            while(true)
+           
+            while (true)
             {
                 string input = Console.ReadLine();
-                if(input == "quit" || input == "")
+                if (input == "quit" || input == "")
                 {
                     break;
                 }
@@ -36,14 +36,13 @@ namespace SimpleCalc
                 }
 
                 else
-                {
-                    object[] parts = expression.GetParts(input);
-                    if (parts.Length == 0) continue;
-                    double results = evaluate.EvalMath(parts);
-                    Console.WriteLine(results);
+                {  
+                        object[] parts = expression.GetParts(input);
+                        if (parts.Length == 0) continue;
+                        double results = evaluate.EvalMath(parts);
+                        Console.WriteLine(results);
                 }
             }
-
         }
     }
 }
